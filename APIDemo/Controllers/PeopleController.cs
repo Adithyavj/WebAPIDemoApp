@@ -39,13 +39,15 @@ namespace APIDemo.Controllers
         }
 
         // PUT: api/People/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, Person person)
         {
+            people[id] = person;
         }
 
         // DELETE: api/People/5
         public void Delete(int id)
         {
+            people.RemoveAt(id);
         }
     }
 }
