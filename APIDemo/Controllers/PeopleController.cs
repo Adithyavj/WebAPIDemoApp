@@ -8,6 +8,9 @@ using System.Web.Http;
 
 namespace APIDemo.Controllers
 {
+    /// <summary>
+    /// This is where we give all the information about people
+    /// </summary>
     public class PeopleController : ApiController
     {
         List<Person> people = new List<Person>();
@@ -19,6 +22,12 @@ namespace APIDemo.Controllers
             people.Add(new Person { FirstName = "Vishnu", LastName = "K", Id = 3 });
         }
 
+        /// <summary>
+        /// Gets a list of the FirstNames of all users
+        /// </summary>
+        /// <param name="UserId">The Unique identifier for this person</param>
+        /// <param name="age">Age of this person</param>
+        /// <returns>A List of FirstNames</returns>
         // Adding a custom Route..
         [Route("api/People/GetFirstNames/{UserId:int}/{Age:int}")]
         [HttpGet]
